@@ -1,0 +1,14 @@
+.local
+.output.js
+
+**/*.svg
+**/*.sh
+
+dist
+node_modules/**
+public/*
+src-tauri
+coverage
+devtools
+dist-electron
+release
