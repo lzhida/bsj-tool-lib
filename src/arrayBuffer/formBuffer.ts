@@ -3,7 +3,7 @@
  * @Date: 2023-01-31 19:24:59
  * @Description: 将 arrayBuffer 转为其他数据
  * @LastEditors: zhidal
- * @LastEditTime: 2023-02-02 10:14:19
+ * @LastEditTime: 2023-02-02 14:53:27
  */
 
 /**
@@ -17,6 +17,26 @@ function getDataView(bytes: number[] | Uint8Array): DataView {
     view.setUint8(i, bytes[i]);
   }
   return view;
+}
+
+/**
+ * @description: 字节数组转 32 位浮点数
+ * @param {number} bytes
+ * @param {number} byteOffset
+ * @return {number}
+ */
+function toFloat32(bytes: number[] | Uint8Array, byteOffset = 0): number {
+  return getDataView(bytes).getFloat32(byteOffset);
+}
+
+/**
+ * @description: 字节数组转 64 位浮点数
+ * @param {number} bytes
+ * @param {*} byteOffset
+ * @return {*}
+ */
+function toFloat64(bytes: number[] | Uint8Array, byteOffset = 0): number {
+  return getDataView(bytes).getFloat64(byteOffset);
 }
 
 /**
@@ -131,6 +151,8 @@ function toUint64(
 
 export {
   getDataView,
+  toFloat32,
+  toFloat64,
   toInt16,
   toInt32,
   toInt64,
