@@ -128,6 +128,7 @@ function toUint64(
 ): bigint {
   return getDataView(bytes).getBigUint64(byteOffset, littleEndian);
 }
+
 export {
   getDataView,
   toInt16,

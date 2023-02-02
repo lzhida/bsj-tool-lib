@@ -87,7 +87,7 @@ function getInt32Bytes(num: number, littleEndian = false): Uint8Array {
  * @return { Uint8Array } 字节数组
  */
 function getInt64Bytes(num: bigint, littleEndian = false): Uint8Array {
-  return getUint8Array(4, function (view) {
+  return getUint8Array(8, function (view) {
     view.setBigInt64(0, num, littleEndian);
   });
 }
@@ -134,7 +134,7 @@ function getUint32Bytes(num: number, littleEndian = false): Uint8Array {
  * @return { Uint8Array } 字节数组
  */
 function getUint64Bytes(num: bigint, littleEndian = false): Uint8Array {
-  return getUint8Array(4, function (view) {
+  return getUint8Array(8, function (view) {
     view.setBigUint64(0, num, littleEndian);
   });
 }

@@ -3,10 +3,10 @@
  * @Date: 2022-12-16 17:18:02
  * @Description:
  * @LastEditors: zhidal
- * @LastEditTime: 2023-02-02 10:20:34
+ * @LastEditTime: 2023-02-02 10:39:00
  */
 
 const foo = 1;
 export { foo };
 
-export * from './arrayBuffer';
+export * as arrayBuffer from './arrayBuffer';
