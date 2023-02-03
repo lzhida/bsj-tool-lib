@@ -3,7 +3,7 @@
  * @Date: 2023-02-02 19:26:46
  * @Description: 字节数组 与 字符串之间的转换
  * @LastEditors: zhidal
- * @LastEditTime: 2023-02-03 15:26:03
+ * @LastEditTime: 2023-02-03 16:22:03
  */
 
 import { BytesToStringOptions } from '../interfaces';
@@ -31,7 +31,7 @@ function showBytesString(
     });
   }
   if (prefix) {
-    let pre = '0x';
+    let pre = '';
     switch (base) {
       case 2: {
         pre = '0b';
@@ -40,9 +40,6 @@ function showBytesString(
       case 16: {
         pre = '0x';
         break;
-      }
-      default: {
-        pre = '0x';
       }
     }
     return pre + res.join('');

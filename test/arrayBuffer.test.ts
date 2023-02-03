@@ -3,7 +3,7 @@
  * @Date: 2023-02-02 10:34:19
  * @Description: arrayBuffer 工具函数测试
  * @LastEditors: zhidal
- * @LastEditTime: 2023-02-03 15:19:42
+ * @LastEditTime: 2023-02-03 16:21:27
  */
 
 import { describe, expect, it } from 'vitest';
@@ -154,6 +154,22 @@ describe('number to arrayBuffer', () => {
 });
 
 describe('bytesToString', () => {
+  it('showBytesString', () => {
+    expect(arrayBuffer.showBytesString([0x12, 0xab])).toEqual('12 AB');
+    expect(arrayBuffer.showBytesString([0x12, 0xab], { sep: ',' })).toEqual(
+      '12,AB',
+    );
+    expect(arrayBuffer.showBytesString([0x12, 0xab], { prefix: true })).toEqual(
+      '0x12AB',
+    );
+    expect(
+      arrayBuffer.showBytesString([0x12, 0xab], { prefix: true, base: 2 }),
+    ).toEqual('0b0001001010101011');
+    expect(arrayBuffer.showBytesString([0x12, 0xab], { base: 2 })).toEqual(
+      '00010010 10101011',
+    );
+  });
+
   it('bytesToString', () => {
     expect(
       arrayBuffer.bytesToString([
