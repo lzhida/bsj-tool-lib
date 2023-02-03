@@ -6,7 +6,4 @@
  * @LastEditTime: 2023-02-02 10:39:00
  */
 
-const foo = 1;
-export { foo };
-
 export * as arrayBuffer from './arrayBuffer';
