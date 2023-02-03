@@ -3,7 +3,7 @@
  * @Date: 2023-02-02 10:34:19
  * @Description: arrayBuffer 工具函数测试
  * @LastEditors: zhidal
- * @LastEditTime: 2023-02-02 14:51:41
+ * @LastEditTime: 2023-02-03 15:19:42
  */
 
 import { describe, expect, it } from 'vitest';
@@ -150,5 +150,37 @@ describe('number to arrayBuffer', () => {
     expect(arrayBuffer.getUint64Bytes(BigInt('0x123456789abcdef1'))).toEqual(
       new Uint8Array([0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf1]),
     );
+  });
+});
+
+describe('bytesToString', () => {
+  it('bytesToString', () => {
+    expect(
+      arrayBuffer.bytesToString([
+        0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x21,
+      ]),
+    ).toEqual('hello world!');
+    expect(
+      arrayBuffer.bytesToString(
+        [
+          0xc4, 0xe3, 0xba, 0xc3, 0xa3, 0xac, 0xca, 0xc0, 0xbd, 0xe7, 0xa3,
+          0xa1,
+        ],
+        {
+          encoding: 'gbk',
+        },
+      ),
+    ).toEqual('你好，世界！');
+  });
+
+  it('stringToBytes', () => {
+    expect(Array.from(arrayBuffer.stringToBytes('hello world!'))).toEqual([
+      0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x21,
+    ]);
+    expect(
+      Array.from(arrayBuffer.stringToBytes('你好，世界！', 'gbk')),
+    ).toEqual([
+      0xc4, 0xe3, 0xba, 0xc3, 0xa3, 0xac, 0xca, 0xc0, 0xbd, 0xe7, 0xa3, 0xa1,
+    ]);
   });
 });

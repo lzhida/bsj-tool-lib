@@ -44,6 +44,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "iconv-lite": "^0.6.3",
     "vue": "^3.2.45"
   },
   "config": {
