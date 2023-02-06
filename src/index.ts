@@ -7,3 +7,4 @@
  */
 
 export * as arrayBuffer from './arrayBuffer';
+export * as utils from './utils';

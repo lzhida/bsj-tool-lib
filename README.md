@@ -1,4 +1,4 @@
-# vite lib tempalte
+# BSJ lib tempalte
 
 使用 vite 构建工具，开发 npm lib 包的模板库。
 
