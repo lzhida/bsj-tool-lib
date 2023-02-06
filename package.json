@@ -1,6 +1,5 @@
 {
-  "name": "@bsj/tool-lib",
-  "private": true,
+  "name": "bsj-tool-lib",
   "version": "0.0.1",
   "files": [
     "dist"
