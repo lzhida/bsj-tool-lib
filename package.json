@@ -1,5 +1,5 @@
 {
-  "name": "vite-lib-template",
+  "name": "@bsj/tool-lib",
   "private": true,
   "version": "0.0.0",
   "files": [
