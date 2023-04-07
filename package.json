@@ -28,6 +28,8 @@
     "prepare": "husky install",
     "preview": "vite preview",
     "release": "standard-version",
+    "release-minor": "standard-version --release-as minor",
+    "release-major": "standard-version --release-as major",
     "test": "vitest",
     "test:watch": "vitest watch",
     "typedoc": "typedoc ./src/index.ts --out ./docs/typedoc --name 工具函数库"
